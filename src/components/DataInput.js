@@ -1,7 +1,6 @@
 // import React from 'react';
 import React, { useState } from 'react';
-
-
+import './DataInput.css'; // Import the CSS file
 
 const DataInput = ({ onBackToDashboard }) => {
   const [productName, setProductName] = useState('');
@@ -17,17 +16,17 @@ const DataInput = ({ onBackToDashboard }) => {
   };
 
   return (
-    <div>
-      <h2>Data Input</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
+    <div className="data-input-container">
+      <h2 className="data-input-title">Data Input</h2>
+      <form className="data-input-form" onSubmit={handleSubmit}>
+        <label className="data-input-label">
           Product Name:
-          <input type="text" value={productName} onChange={(e) => setProductName(e.target.value)} />
+          <input className="data-input-field" type="text" value={productName} onChange={(e) => setProductName(e.target.value)} />
         </label>
         <br />
-        <label>
+        <label className="data-input-label">
           Product Category:
-          <select value={category} onChange={(e) => setCategory(e.target.value)}>
+          <select className="data-input-select" value={category} onChange={(e) => setCategory(e.target.value)}>
             <option value="">Select Category</option>
             <option value="Seating">Seating</option>
             <option value="Desk">Desk</option>
@@ -43,28 +42,28 @@ const DataInput = ({ onBackToDashboard }) => {
           </select>
         </label>
         <br />
-        <label>
+        <label className="data-input-label">
           Additional Information:
-          <input type="text" value={additionalInfo} onChange={(e) => setAdditionalInfo(e.target.value)} />
+          <input className="data-input-field" type="text" value={additionalInfo} onChange={(e) => setAdditionalInfo(e.target.value)} />
         </label>
         <br />
-        <label>
+        <label className="data-input-label">
           Product Description:
-          <textarea value={description} onChange={(e) => setDescription(e.target.value)} />
+          <textarea className="data-input-textarea" value={description} onChange={(e) => setDescription(e.target.value)} />
         </label>
         <br />
-        <label>
+        <label className="data-input-label">
           Features:
-          <textarea value={features} onChange={(e) => setFeatures(e.target.value)} />
+          <textarea className="data-input-textarea" value={features} onChange={(e) => setFeatures(e.target.value)} />
         </label>
         <br />
-        <label>
+        <label className="data-input-label">
           Option:
-          <textarea value={option} onChange={(e) => setOption(e.target.value)} />
+          <textarea className="data-input-textarea" value={option} onChange={(e) => setOption(e.target.value)} />
         </label>
         <br />
-        <button type="submit">Submit</button>
-        <button onClick={onBackToDashboard}>Back to Dashboard</button>
+        <button className="data-input-button" type="submit">Submit</button>
+        <button className="data-input-button" onClick={onBackToDashboard}>Back to Dashboard</button>
       </form>
     </div>
   );

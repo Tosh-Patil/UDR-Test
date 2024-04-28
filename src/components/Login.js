@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Login.css'; 
 
 function LoginForm({ onLogin }) {
   const handleSubmit = (event) => {
@@ -9,11 +10,11 @@ function LoginForm({ onLogin }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Login Page</h2>
-      <input type="text" name="username" placeholder="Username" />
-      <input type="password" name="password" placeholder="Password" />
-      <button type="submit">Login</button>
+    <form className="login-form-container" onSubmit={handleSubmit}>
+      <h2 className="login-form-title">Login Page</h2>
+      <input className="login-form-input" type="text" name="username" placeholder="Username" />
+      <input className="login-form-input" type="password" name="password" placeholder="Password" />
+      <button className="login-form-button" type="submit">Login</button>
     </form>
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import './Dashboard.css'
 
 const Dashboard = ({ onPageChange, onLogout }) => {
   const handleLogout = () => {
@@ -6,11 +7,11 @@ const Dashboard = ({ onPageChange, onLogout }) => {
   };
 
   return (
-    <div>
-      <h1>Dashboard!</h1>
-      <button onClick={() => onPageChange('dataInput')}>Go to Data Input</button>
-      <button onClick={() => onPageChange('dataQuery')}>Go to Data Query</button>
-      <button onClick={handleLogout}>Logout</button>
+    <div className="dashboard-container">
+      <h1 className ="dashboard-title">Dashboard!</h1>
+      <button className="dashboard-button" onClick={() => onPageChange('dataInput')}>Go to Data Input</button>
+      <button className="dashboard-button" onClick={() => onPageChange('dataQuery')}>Go to Data Query</button>
+      <button className="dashboard-button" onClick={handleLogout}>Logout</button>
     </div>
   );
 };

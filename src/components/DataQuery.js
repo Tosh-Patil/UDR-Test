@@ -1,6 +1,5 @@
-// import React from 'react';
 import React, { useState } from 'react';
-
+import './DataQuery.css'; // Import the CSS file
 
 const QueryForm = ({ onBackToDashboard }) => {
   const [productNumber, setProductNumber] = useState('');
@@ -13,22 +12,22 @@ const QueryForm = ({ onBackToDashboard }) => {
   };
 
   return (
-    <div>
-      <h2>Query Form</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
+    <div className="query-form-container">
+      <h2 className="query-form-title">Query Form</h2>
+      <form className="query-form" onSubmit={handleSubmit}>
+        <label className="query-form-label">
           Product Number:
-          <input type="text" value={productNumber} onChange={(e) => setProductNumber(e.target.value)} />
+          <input className="query-form-input" type="text" value={productNumber} onChange={(e) => setProductNumber(e.target.value)} />
         </label>
         <br />
-        <label>
+        <label className="query-form-label">
           Product Name:
-          <input type="text" value={productName} onChange={(e) => setProductName(e.target.value)} />
+          <input className="query-form-input" type="text" value={productName} onChange={(e) => setProductName(e.target.value)} />
         </label>
         <br />
-        <label>
+        <label className="query-form-label">
           Category:
-          <select value={category} onChange={(e) => setCategory(e.target.value)}>
+          <select className="query-form-select" value={category} onChange={(e) => setCategory(e.target.value)}>
             <option value="">Select Category</option>
             <option value="Seating">Seating</option>
             <option value="Desk">Desk</option>
@@ -44,8 +43,8 @@ const QueryForm = ({ onBackToDashboard }) => {
           </select>
         </label>
         <br />
-        <button type="submit">Search</button>
-        <button onClick={onBackToDashboard}>Back to Dashboard</button>
+        <button className="query-form-button" type="submit">Search</button>
+        <button className="query-form-button" onClick={onBackToDashboard}>Back to Dashboard</button>
       </form>
     </div>
   );
