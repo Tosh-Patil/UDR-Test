@@ -9,6 +9,7 @@ import LoginForm from './components/Login';
 import Dashboard from './components/Dashboard';
 import DataInput from './components/DataInput';
 import DataQuery from './components/DataQuery';
+import DataInputCsv from './components/DataInputCsv';
 
 
 
@@ -40,13 +41,13 @@ function App() {
       {isLoggedIn ? (
         currentPage === 'dashboard' ? (
           <Dashboard onPageChange={handleNavigation} onLogout={handleLogout} />
-        ) : (
-          currentPage === 'dataInput' ? (
-            <DataInput onBackToDashboard={() => setCurrentPage('dashboard')} />
-          ) : (
-            currentPage === 'dataQuery' && <DataQuery onBackToDashboard={() => setCurrentPage('dashboard')} />
-          )
-        )
+        ) : currentPage === 'dataInput' ? (
+          <DataInput onBackToDashboard={() => setCurrentPage('dashboard')} />
+        ) : currentPage === 'dataInputCsv' ? (
+          <DataInputCsv onBackToDashboard={() => setCurrentPage('dashboard')} />
+        ) : currentPage === 'dataQuery' ? (
+          <DataQuery onBackToDashboard={() => setCurrentPage('dashboard')} />
+        ) : null
       ) : (
         <LoginForm onLogin={handleLogin} />
       )}
